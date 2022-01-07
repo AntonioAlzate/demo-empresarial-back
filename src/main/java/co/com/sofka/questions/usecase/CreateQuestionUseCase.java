@@ -3,9 +3,13 @@ package co.com.sofka.questions.usecase;
 import co.com.sofka.questions.model.QuestionDTO;
 import co.com.sofka.questions.reposioties.QuestionRepository;
 import co.com.sofka.questions.utils.MapperUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
 
-public class CreateQuestionUseCase implements SaveQuestion{
+@Service
+@Validated
+public class CreateQuestionUseCase implements SaveQuestion {
 
     private final QuestionRepository repository;
     private final MapperUtils mapperUtils;

@@ -1,11 +1,9 @@
 package co.com.sofka.questions.usecases;
 
 import co.com.sofka.questions.collections.Answer;
-import co.com.sofka.questions.collections.Question;
 import co.com.sofka.questions.model.AnswerDTO;
 import co.com.sofka.questions.model.QuestionDTO;
 import co.com.sofka.questions.reposioties.AnswerRepository;
-import co.com.sofka.questions.reposioties.QuestionRepository;
 import co.com.sofka.questions.usecase.CreateAndAddAnswerUseCase;
 import co.com.sofka.questions.usecase.GetQuestionByIdUseCase;
 import co.com.sofka.questions.utils.MapperUtils;
@@ -24,7 +22,7 @@ class CreateAndAddAnswerUseCaseTest {
     CreateAndAddAnswerUseCase createAndAddAnswerUseCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         MapperUtils mapperUtils = new MapperUtils();
         answerRepository = mock(AnswerRepository.class);
         getQuestionByIdUseCase = mock(GetQuestionByIdUseCase.class);
@@ -32,7 +30,7 @@ class CreateAndAddAnswerUseCaseTest {
     }
 
     @Test
-    void createAndAddValidation(){
+    void createAndAddValidation() {
 
         var questionDTOP = new QuestionDTO("asd123", "asd", "¿Pregunta?", "OPEN", "SCIENCES");
 

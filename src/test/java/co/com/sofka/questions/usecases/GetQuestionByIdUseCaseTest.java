@@ -12,8 +12,6 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import java.util.List;
-
 import static org.mockito.Mockito.*;
 
 class GetQuestionByIdUseCaseTest {
@@ -23,7 +21,7 @@ class GetQuestionByIdUseCaseTest {
     GetQuestionByIdUseCase getQuestionByIdUseCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         MapperUtils mapperUtils = new MapperUtils();
         questionRepository = mock(QuestionRepository.class);
         answerRepository = mock(AnswerRepository.class);
@@ -31,9 +29,9 @@ class GetQuestionByIdUseCaseTest {
     }
 
     @Test
-    void GetQuestionByIdUseCaseValidation(){
+    void GetQuestionByIdUseCaseValidation() {
         String questionId = "asd123";
-        var question =  new Question();
+        var question = new Question();
         question.setId(questionId);
         question.setType("OPEN");
         question.setCategory("SCIENCES");

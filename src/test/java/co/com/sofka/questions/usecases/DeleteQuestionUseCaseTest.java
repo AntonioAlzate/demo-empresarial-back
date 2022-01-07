@@ -17,14 +17,14 @@ class DeleteQuestionUseCaseTest {
     DeleteQuestionUseCase deleteQuestionUseCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         questionRepository = mock(QuestionRepository.class);
         answerRepository = mock(AnswerRepository.class);
         deleteQuestionUseCase = new DeleteQuestionUseCase(questionRepository, answerRepository);
     }
 
     @Test
-    void deleteQuestionValidation(){
+    void deleteQuestionValidation() {
         String id = "123";
         when(questionRepository.deleteById(id)).thenReturn(Mono.empty());
         when(answerRepository.deleteByQuestionId(id)).thenReturn(Mono.empty());

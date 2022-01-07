@@ -19,15 +19,15 @@ class UpdateQuestionUseCaseTest {
     UpdateQuestionUseCase updateQuestionUseCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         MapperUtils mapperUtils = new MapperUtils();
         questionRepository = mock(QuestionRepository.class);
         updateQuestionUseCase = new UpdateQuestionUseCase(questionRepository, mapperUtils);
     }
 
     @Test
-    void updateQuestionValidation(){
-        var question =  new Question();
+    void updateQuestionValidation() {
+        var question = new Question();
         question.setId("asd123");
         question.setUserId("123");
         question.setType("OPEN");

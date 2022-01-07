@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class GetAllQuestionsByOwnerUseCaseTest {
@@ -17,15 +16,15 @@ class GetAllQuestionsByOwnerUseCaseTest {
     GetAllQuestionsByOwnerUseCase getAllQuestionsByOwnerUseCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         MapperUtils mapperUtils = new MapperUtils();
         questionRepository = mock(QuestionRepository.class);
         getAllQuestionsByOwnerUseCase = new GetAllQuestionsByOwnerUseCase(questionRepository, mapperUtils);
     }
 
     @Test
-    void GetAllQuestionsByOwnerValidation(){
-        var question1 =  new Question();
+    void GetAllQuestionsByOwnerValidation() {
+        var question1 = new Question();
         question1.setId("123");
         question1.setUserId("asd123");
         question1.setType("OPEN");

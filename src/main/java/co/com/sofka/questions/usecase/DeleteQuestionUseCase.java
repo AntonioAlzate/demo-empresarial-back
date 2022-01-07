@@ -2,12 +2,15 @@ package co.com.sofka.questions.usecase;
 
 import co.com.sofka.questions.reposioties.AnswerRepository;
 import co.com.sofka.questions.reposioties.QuestionRepository;
-import co.com.sofka.questions.utils.MapperUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
 
 import java.util.Objects;
 import java.util.function.Function;
 
+@Service
+@Validated
 public class DeleteQuestionUseCase implements Function<String, Mono<Void>> {
 
     private final QuestionRepository questionRepository;

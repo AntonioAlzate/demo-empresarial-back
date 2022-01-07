@@ -7,7 +7,6 @@ import co.com.sofka.questions.usecase.CreateQuestionUseCase;
 import co.com.sofka.questions.utils.MapperUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
@@ -20,15 +19,15 @@ class CreateQuestionUseCaseTest {
     CreateQuestionUseCase createQuestionUseCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         MapperUtils mapperUtils = new MapperUtils();
         repository = mock(QuestionRepository.class);
         createQuestionUseCase = new CreateQuestionUseCase(repository, mapperUtils);
     }
 
     @Test
-    void createQuestionValidation(){
-        var question =  new Question();
+    void createQuestionValidation() {
+        var question = new Question();
         question.setUserId("asd123");
         question.setType("OPEN");
         question.setCategory("SCIENCES");

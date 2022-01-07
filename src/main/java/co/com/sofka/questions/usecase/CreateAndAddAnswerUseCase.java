@@ -4,11 +4,15 @@ import co.com.sofka.questions.model.AnswerDTO;
 import co.com.sofka.questions.model.QuestionDTO;
 import co.com.sofka.questions.reposioties.AnswerRepository;
 import co.com.sofka.questions.utils.MapperUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
 
 import java.util.Objects;
 
-public class CreateAndAddAnswerUseCase implements SaveAnswer{
+@Service
+@Validated
+public class CreateAndAddAnswerUseCase implements SaveAnswer {
 
     private final AnswerRepository answerRepository;
     private final MapperUtils mapperUtils;
