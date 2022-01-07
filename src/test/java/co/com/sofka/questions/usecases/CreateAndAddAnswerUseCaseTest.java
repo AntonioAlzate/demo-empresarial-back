@@ -4,8 +4,6 @@ import co.com.sofka.questions.collections.Answer;
 import co.com.sofka.questions.model.AnswerDTO;
 import co.com.sofka.questions.model.QuestionDTO;
 import co.com.sofka.questions.reposioties.AnswerRepository;
-import co.com.sofka.questions.usecase.CreateAndAddAnswerUseCase;
-import co.com.sofka.questions.usecase.GetQuestionByIdUseCase;
 import co.com.sofka.questions.utils.MapperUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

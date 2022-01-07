@@ -2,7 +2,6 @@ package co.com.sofka.questions.usecases;
 
 import co.com.sofka.questions.reposioties.AnswerRepository;
 import co.com.sofka.questions.reposioties.QuestionRepository;
-import co.com.sofka.questions.usecase.DeleteQuestionUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;

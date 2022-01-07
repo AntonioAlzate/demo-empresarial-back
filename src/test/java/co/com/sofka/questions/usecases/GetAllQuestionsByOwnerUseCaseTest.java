@@ -1,4 +1,4 @@
-package co.com.sofka.questions.usecase;
+package co.com.sofka.questions.usecases;
 
 import co.com.sofka.questions.collections.Question;
 import co.com.sofka.questions.reposioties.QuestionRepository;

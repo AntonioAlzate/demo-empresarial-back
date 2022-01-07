@@ -3,7 +3,6 @@ package co.com.sofka.questions.usecases;
 import co.com.sofka.questions.collections.Question;
 import co.com.sofka.questions.model.QuestionDTO;
 import co.com.sofka.questions.reposioties.QuestionRepository;
-import co.com.sofka.questions.usecase.CreateQuestionUseCase;
 import co.com.sofka.questions.utils.MapperUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package co.com.sofka.questions.usecase;
+package co.com.sofka.questions.usecases;
 
 import co.com.sofka.questions.model.QuestionDTO;
 import co.com.sofka.questions.reposioties.QuestionRepository;
@@ -7,26 +7,21 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
 
-import java.util.Objects;
-
 @Service
 @Validated
-public class UpdateQuestionUseCase implements SaveQuestion {
+public class CreateQuestionUseCase implements SaveQuestion {
 
-    private final QuestionRepository questionRepository;
+    private final QuestionRepository repository;
     private final MapperUtils mapperUtils;
 
-    public UpdateQuestionUseCase(QuestionRepository questionRepository, MapperUtils mapperUtils) {
-        this.questionRepository = questionRepository;
+    public CreateQuestionUseCase(QuestionRepository repository, MapperUtils mapperUtils) {
+        this.repository = repository;
         this.mapperUtils = mapperUtils;
     }
 
     @Override
     public Mono<QuestionDTO> apply(QuestionDTO questionDTO) {
-        String id = questionDTO.getId();
-        Objects.requireNonNull(id, "Id of the question is required");
-        return questionRepository
-                .save(mapperUtils.mapperToQuestion(id).apply(questionDTO))
+        return repository.save(mapperUtils.mapperToQuestion(null).apply(questionDTO))
                 .map(question -> mapperUtils.mapEntityToQuestion().apply(question));
     }
 }
